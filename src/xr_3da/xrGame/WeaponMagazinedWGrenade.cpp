@@ -550,11 +550,12 @@ bool CWeaponMagazinedWGrenade::Detach(const char* item_section_name, bool b_spaw
 	   !xr_strcmp(*m_sGrenadeLauncherName, item_section_name))
 	{
 		m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonGrenadeLauncher;
-		if(m_bGrenadeMode)
+		if (!m_bGrenadeMode)
 		{
-			UnloadMagazine();
 			PerformSwitchGL();
 		}
+			UnloadMagazine();
+			PerformSwitchGL();
 
 		UpdateAddonsVisibility();
 		return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
