@@ -58,3 +58,6 @@
 	<string id="mil_watertower_hint">
 		<text>Водонапорная башня</text>
 	</string>
+	<string id="mil_dolg_task_report">
+		<text>Доложить Черепу</text>
+	</string>

@@ -30,9 +30,6 @@
 	<string id="excellent">
 		<text>отлично</text>
 	</string>
-	<string id="exo_outfit_name_m1">
-		<text>Экзоскелет ПНБ-4УЗ</text>
-	</string>
 	<string id="experienced">
 		<text>опытный</text>
 	</string>
@@ -64,7 +61,7 @@
 		<text>НИИ Агропром</text>
 	</string>
 	<string id="l04_darkvalley">
-		<text>Темная Долина</text>
+		<text>Тёмная Долина</text>
 	</string>
 	<string id="l05_bar">
 		<text>Бар</text>
@@ -235,13 +232,13 @@
 		<text>Подземелье НИИ Агропром</text>
 	</string>
 	<string id="l04u_labx18">
-		<text>Лаборатория X-18</text>
+		<text>Лаборатория X18</text>
 	</string>
 	<string id="l08u_brainlab">
-		<text>Лаборатория X-16</text>
+		<text>Лаборатория X16</text>
 	</string>
 	<string id="l10u_bunker">
-		<text>Лаборатория X-10</text>
+		<text>Лаборатория X10</text>
 	</string>
 	<string id="l12u_sarcofag">
 		<text>Саркофаг</text>

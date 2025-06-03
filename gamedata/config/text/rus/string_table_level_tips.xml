@@ -67,7 +67,7 @@
 		<text>На Росток</text>
 	</string>
 	<string id="to_darkvalley">
-		<text>В темную долину</text>
+		<text>В Тёмную Долину</text>
 	</string>
 	<string id="to_escape">
 		<text>На кордон</text>
@@ -79,7 +79,7 @@
 		<text>На склады</text>
 	</string>
 	<string id="to_pripyat">
-		<text>На Припять</text>
+		<text>В Припять</text>
 	</string>
 	<string id="to_radar">
 		<text>К "Выжигателю мозгов"</text>

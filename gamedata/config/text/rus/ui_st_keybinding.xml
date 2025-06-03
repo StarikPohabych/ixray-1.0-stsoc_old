@@ -34,7 +34,7 @@
 		<text>Присесть</text>
 	</string>
 	<string id="kb_crouch_toggle">
-		<text>Всегда в присяди</text>
+		<text>Всегда в присяде</text>
 	</string>
 	<string id="kb_down">
 		<text>Вниз</text>
@@ -145,7 +145,7 @@
 		<text>Фонарик</text>
 	</string>
 	<string id="kb_turn_engine">
-		<text>Включить</text>
+		<text>Включить двигатель</text>
 	</string>
 	<string id="kb_up">
 		<text>Вверх</text>
