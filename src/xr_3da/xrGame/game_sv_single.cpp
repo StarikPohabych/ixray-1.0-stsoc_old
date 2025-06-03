@@ -65,8 +65,9 @@ void	game_sv_Single::OnCreate		(u16 id_who)
 	if (alife_object->ID_Parent != 0xffff) {
 		CSE_ALifeDynamicObject			*parent = ai().alife().objects().object(alife_object->ID_Parent,true);
 		if (parent) {
-			CSE_ALifeTraderAbstract		*trader = smart_cast<CSE_ALifeTraderAbstract*>(parent);
-			if (trader)
+			CSE_ALifeTraderAbstract* trader = smart_cast<CSE_ALifeTraderAbstract*>(parent);
+			CSE_InventoryBox* box = smart_cast<CSE_InventoryBox*>(parent);
+			if (box || trader)
 				alife().create			(alife_object);
 			else
 				alife_object->m_bALifeControl	= false;
