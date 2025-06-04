@@ -22,6 +22,7 @@
 #include "../motion.h"
 #include "artifact.h"
 #include "IKLimbsController.h"
+#include "WeaponKnife.h"
 static const float y_spin0_factor		= 0.0f;
 static const float y_spin1_factor		= 0.4f;
 static const float y_shoulder_factor	= 0.4f;
@@ -386,10 +387,7 @@ void CActor::g_SetAnimation( u32 mstate_rl )
 	if(!M_torso)
 	{
 		CInventoryItem* _i = inventory().ActiveItem();
-		CHudItem		*H = smart_cast<CHudItem*>(_i);
-		CWeapon			*W = smart_cast<CWeapon*>(_i);
-		CMissile		*M = smart_cast<CMissile*>(_i);
-		CArtefact		*A = smart_cast<CArtefact*>(_i);
+		CHudItem* H = smart_cast<CHudItem*>(_i);
 					
 		if (H) {
 			VERIFY(H->animation_slot() <= _total_anim_slots_);
@@ -404,11 +402,13 @@ void CActor::g_SetAnimation( u32 mstate_rl )
 				m_bAnimTorsoPlayed		= TRUE;
 			}else{
 				if (!m_bAnimTorsoPlayed) {
+					CWeapon* W = smart_cast<CWeapon*>(_i);
+					CMissile* M = smart_cast<CMissile*>(_i);
+					CArtefact* A = smart_cast<CArtefact*>(_i);
 					if (W) {
-						bool K	=inventory().GetActiveSlot() == KNIFE_SLOT;
 						bool R3 = W->IsTriStateReload();
 						
-						if(K)
+						if (smart_cast<CWeaponKnife*>(W))
 						{
 							switch (W->GetState()){
 							case CWeapon::eIdle:		M_torso	= TW->moving[moving_idx];		break;
@@ -457,6 +457,8 @@ void CActor::g_SetAnimation( u32 mstate_rl )
 							default				 :  M_torso	= TW->moving[moving_idx];	break;
 							}
 						}
+						if (!M_torso)
+							M_torso = ST->m_torso[4].moving[moving_idx];
 					}
 					else if (M) {
 						if(is_standing)
@@ -500,6 +502,13 @@ void CActor::g_SetAnimation( u32 mstate_rl )
 					}
 				}
 			}
+		}
+		else if (!m_bAnimTorsoPlayed)
+		{
+			if (moving_idx == STorsoWpn::eSprint)
+				M_torso = ST->m_torso[0].moving[moving_idx];
+			else
+				M_torso = ST->m_torso[4].moving[moving_idx];
 		}
 	}
 
